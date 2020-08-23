@@ -1,0 +1,12 @@
+{
+  "name": "js-ds",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^8.1.1"
+  }
+}
