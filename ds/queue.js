@@ -20,7 +20,7 @@ class Queue {
   }
 
   isEmpty() {
-    return this.collection.length === 0;
+    return this.queue.length === 0;
   }
 }
 
@@ -30,3 +30,4 @@ myQueue.enqueue(2);
 console.log(myQueue.queue);
 console.log(myQueue.dequeue());
 console.log(myQueue.queue);
+console.log(myQueue.isEmpty());
