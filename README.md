@@ -1,7 +1,7 @@
 # js-ds-algo
 
 ## Sorting an array
-  - `sort()`
+  - `sort()` - sorts the elements of an array IN PLACE (mutate) and RETURN THE SORTED ARRAY.
   ```javascript
   // sorts the elements of an array in place and returns the sorted array.
   let a = ['banana', 'cherry', 'apple'];
@@ -36,7 +36,8 @@
 
   console.log(d.sort(caseInsensitiveSort)); // [ 'ant', 'Bug', 'cat', 'Dog' ]
   ```
-  - `reverse()`
+  
+  - `reverse()` - reverses the elements of an array IN PLACE (mutate) and RETURN THE SORTED ARRAY.
   ```javascript
   let m = [2, 5, 6];
   let n = [4444, 333, 22, 1];
