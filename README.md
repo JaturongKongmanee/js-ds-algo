@@ -59,3 +59,11 @@ console.log(s.indexOf('Dill', 1)); // 2: searching postion starts at index 1
 console.log(s.includes('Smith')); // false
 console.log(s.includes('Smile')); // true
 ```
+
+## Basic Array Fucntion - *fill()*
+```javascript
+let k = new Array(5);
+console.log(k); // [ <5 empty items> ]
+console.log(k.fill(0)); // [ 0, 0, 0, 0, 0 ]
+console.log(k.fill(7, 1, 3)); // [ 0, 7, 7, 0, 0 ]
+```
