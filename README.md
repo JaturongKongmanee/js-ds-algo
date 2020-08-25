@@ -141,6 +141,16 @@
 
 </details>
   
+<details>
+  <summary><b>Unit Tests vs. Integration Tests vs. Functional Tests</b></summary>
+  
+  | **Dos.** |
+  | ------------- |
+  | **Unit Tests** - ensure that individual components of the app work as expected. |
+  | **Integration Tests** - ensure that these individual components of an application work together as expected. Assertions may test component API, UI, or side-effects (such as database I/O, logging, etc…)|
+  | **Functional Tests** - ensure that the app works as expected from the user’s perspective. Assertions primarily test the user interface.|
+  
+</details>
   
  ---
 
