@@ -4,9 +4,9 @@
 <details>
   <summary><b>Closures</b></summary>
   
-| **What**        | **When**          | References |
-| :------------- | :------------- | :------------- |
-| **Closures** - a function defined within another function. The inner function has access to the outer function’s variables and parameters. | =>`Provides object data hiding and encapsulation.`<br>=>`Function Factories` | https://medium.com/@dis_is_patrick/practical-uses-for-closures-c65640ae7304<br>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures |
+| **What**        | **When**          |
+| :------------- | :------------- | 
+| **Closures** - a function defined within another function. The inner function has access to the outer function’s variables and parameters. | =>`Provides object data hiding and encapsulation.`<br>=>`Function Factories` | 
 
   - **Example 1:** `Data hiding and encapsulation`
   ```javascript
@@ -27,6 +27,10 @@
   console.log(b); // [ 'apple', 'banana', 'cherry' ]
   console.log(a); // [ 'apple', 'banana', 'cherry' ]
   ```
+  - Reference
+    - https://medium.com/@dis_is_patrick/practical-uses-for-closures-c65640ae7304
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+    
 </details>  
   
  ---
