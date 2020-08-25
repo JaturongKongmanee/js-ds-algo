@@ -1,5 +1,36 @@
 # js-ds-algo
 
+## What is a
+<details>
+  <summary><b>Closures</b></summary>
+  
+| **What**        | **When**          | References |
+| :------------- | :------------- | :------------- |
+| **Closures** - a function defined within another function. The inner function has access to the outer function’s variables and parameters. | =>`Provides object data hiding and encapsulation.`<br>=>`Function Factories` | https://medium.com/@dis_is_patrick/practical-uses-for-closures-c65640ae7304<br>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures |
+
+  - **Example 1:** `Data hiding and encapsulation`
+  ```javascript
+  // sorts the elements of an array in place and returns the sorted array.
+  let a = ['banana', 'cherry', 'apple'];
+  let b = a.sort();
+
+  console.log(b); // [ 'apple', 'banana', 'cherry' ]
+  console.log(a); // [ 'apple', 'banana', 'cherry' ]
+  ```
+  
+  - **Example 2:** `Function Factories`
+  ```javascript
+  // sorts the elements of an array in place and returns the sorted array.
+  let a = ['banana', 'cherry', 'apple'];
+  let b = a.sort();
+
+  console.log(b); // [ 'apple', 'banana', 'cherry' ]
+  console.log(a); // [ 'apple', 'banana', 'cherry' ]
+  ```
+</details>  
+  
+ ---
+
 ## Sorting an array
   - `sort()` - sorts the elements of an array IN PLACE (mutate) and RETURN THE SORTED ARRAY.
   ```javascript
