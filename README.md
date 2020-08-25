@@ -71,7 +71,16 @@
 | :------------- | :------------- | 
 | **BDD** - is a guidance in software development.The flow is as follows:<br><br>1. Write the initial spec, then write tests for the basic functionality<br>2. Initially implement the function<br>3. Run the tests<br>4. Refine the implementation to make it works<br>5. Add more use cases, write more tests<br>6. Repeat 3 - 5 until the functionality is ready. | Start to End of the whole project | 
 
-
+  - **To clarify the problem specification with these ***Edge Cases*****
+    - `Empty input`, `null`, `undefined`, `input types`
+    - `Negative number`
+    - `Array with 1 or 2 elements`
+    - `Range of inputs`
+    - `Missing arguments`
+    - `Duplicated elements`
+    - `Sorted` in `ascending`, or `descending`
+      
+      
   - **Example 1:**
     - **pow()** function
     ```javascript
@@ -146,7 +155,7 @@
   
   | **Dos.** |
   | ------------- |
-  | **Unit Tests** - ensure that individual components of the app work as expected. |
+  | **Unit Tests** - ensure that individual components (a method/function) of the app work as expected. |
   | **Integration Tests** - ensure that these individual components of an application work together as expected. Assertions may test component API, UI, or side-effects (such as database I/O, logging, etc…)|
   | **Functional Tests** - ensure that the app works as expected from the user’s perspective. Assertions primarily test the user interface.|
   
