@@ -10,22 +10,53 @@
 
   - **Example 1:** `Data hiding and encapsulation`
   ```javascript
-  // sorts the elements of an array in place and returns the sorted array.
-  let a = ['banana', 'cherry', 'apple'];
-  let b = a.sort();
+  var makeCounter = function() {
+    var privateCounter = 0;
+    function changeBy(val) {
+      privateCounter += val;
+    }
+    return {
+      increment: function() {
+        changeBy(1);
+      },
 
-  console.log(b); // [ 'apple', 'banana', 'cherry' ]
-  console.log(a); // [ 'apple', 'banana', 'cherry' ]
+      decrement: function() {
+        changeBy(-1);
+      },
+
+      value: function() {
+        return privateCounter;
+      }
+    }
+  };
+
+  var counter1 = makeCounter();
+  var counter2 = makeCounter();
+
+  alert(counter1.value());  // 0.
+
+  counter1.increment();
+  counter1.increment();
+  alert(counter1.value()); // 2.
+
+  counter1.decrement();
+  alert(counter1.value()); // 1.
+  alert(counter2.value()); // 0.
   ```
   
   - **Example 2:** `Function Factories`
   ```javascript
-  // sorts the elements of an array in place and returns the sorted array.
-  let a = ['banana', 'cherry', 'apple'];
-  let b = a.sort();
+  function makeAdder(x) {
+    return function(y) {
+      return x + y;
+    };
+  }
 
-  console.log(b); // [ 'apple', 'banana', 'cherry' ]
-  console.log(a); // [ 'apple', 'banana', 'cherry' ]
+  var add5 = makeAdder(5);
+  var add10 = makeAdder(10);
+
+  console.log(add5(2));  // 7
+  console.log(add10(2)); // 12
   ```
   - Reference
     - https://medium.com/@dis_is_patrick/practical-uses-for-closures-c65640ae7304
