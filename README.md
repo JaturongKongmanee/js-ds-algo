@@ -64,6 +64,84 @@
     
 </details>  
   
+<details>
+  <summary><b>Behavior Driven Development (BDD)</b></summary>
+  
+| **What**        | **When**          |
+| :------------- | :------------- | 
+| **BDD** - is a guidance in software development.The flow is as follows:<br><br>1. Write the initial spec, then write tests for the basic functionality<br>2. Initially implement the function<br>3. Run the tests<br>4. Refine the implementation to make it works<br>5. Add more use cases, write more tests<br>6. Repeat 3 - 5 until the functionality is ready. | Start to End of the whole project | 
+
+
+  - **Example 1:**
+    - **pow()** function
+    ```javascript
+    function pow(x, n) {
+      if (n < 0 || Math.round(n) != n) {
+        return NaN;
+      }
+
+      let result = 1;
+
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+
+      return result;
+    }
+    ```
+    
+    - **test with specifications**
+    ```javascript
+    let Mocha = require('mocha');
+    let assert = require('assert');
+    let mocha = new Mocha()
+
+    mocha.suite.emit('pre-require', this, 'solution', mocha)
+
+    describe('pow', function() {
+      it('2 raised to power 3 is 8', function() {
+        assert.equal(pow(2, 3), 8);
+      });
+
+      it('3 raised to power 3 is 27', function() {
+        assert.equal(pow(3, 3), 27);
+      });
+
+      it('the result is NaN for a negative n', function() {
+        assert.strictEqual(pow(2, -1), NaN);
+      });
+
+      it('the result is NaN for a non-integer', function() {
+        assert.strictEqual(pow(2, 1.5), NaN);
+      });
+    });
+
+
+    mocha.run();
+    ```
+    - **Output example**
+    ```javascript
+    pow
+    ✓ 2 raised to power 3 is 8
+    ✓ 3 raised to power 3 is 27
+    ✓ the result is NaN for a negative n
+    ✓ the result is NaN for a non-integer
+
+
+    4 passing (7ms)
+    ```
+    
+    - **Other assertions**
+    ```javascript
+    assert.deepEqual(obj1, obg2) - check two objects
+    assert.strictEqual(val1, val2) - check strict equality `val1 === val2`
+    assert.isTrue(value) - check if `value === true`
+    assert.isFalse(value) - check if `value === false`
+    ```
+
+</details>
+  
+  
  ---
 
 ## Sorting an array
