@@ -337,50 +337,103 @@
     ```
   </details> 
   
-  ## Object
-  <details>
-    <summary><b>Fundamental operators</b></summary>
+  ---
   
-    - `obj.property` - dot notation
-    - `obj["property"]` - square brackets notation
-    - `obj[varWithKey]` - take the key from a variable
-    - `delete obj.property` - to delete a property
-    - `"key" in obj` - to check if a property with the given key exists
-    - `for (let key in obj)` - to iterate over an object
-    - `Object.assign()` - to make a real copy (clone)
+  ## Object
+ <details>
+   <summary><b>Fundamental operators</b></summary>
+  
+  - `obj.property` - dot notation
+  - `obj["property"]` - square brackets notation
+  - `obj[varWithKey]` - take the key from a variable
+  - `delete obj.property` - to delete a property
+  - `"key" in obj` - to check if a property with the given key exists
+  - `for (let key in obj)` - to iterate over an object
+  - `Object.assign()` - to make a real copy (clone)
+  ```javascript
+    let user = {
+    name: "Dill",
+    sizes: {
+      height: 5.7,
+      weight: 120
+    }
+  }
+
+  let user2 = {
+    name: "Smile",
+    sizes: {
+      height: 5.4,
+      weight: 120
+    }
+  }
+
+  let clone = Object.assign({}, user);
+
+  console.log(user === clone) // false
+  console.log(user.sizes === clone.sizes) // true
+
+  let clone2 = Object.assign({}, [user, user2])
+  console.log(clone2) 
+  /* {
+        0: {
+          name: "Dill",
+          sizes: { ... }
+        },
+        1: {
+          name: "Smile",
+          sizes: { ... }
+        }
+      }*/
+  ```
+</details>
+ <details>
+   <summary><b>Object methods, and "this" in methods</b></summary>
+  
+  - **Object Methods** - `method shorthand`
+  ```javascript
+  let user = {
+    name: "Dill",
+    sayHi() {
+      alert(this.name);
+    }
+  };
+
+  user.sayHi(); // Dill
+  ```
+  
+  ```javascript
+  let user = {
+    name: "Dill",
+  };
+  
+  function sayHi() {
+    alert(this.name);
+  }
+
+  user.sayHi = sayHi;
+  user.sayHi(); // Dill
+  ```
+  
+  - **"this" keyword in methods** - to access the object's property
+    - `this` **is not bound** - `this` is evaluated during the **run-time**, depending on the context.
+    - if `obj.f()` is called, then `this` is `obj` during the call of `f`. So it's either `user` or `admin` in the below example.
     ```javascript
-      let user = {
-      name: "Dill",
-      sizes: {
-        height: 5.7,
-        weight: 120
-      }
-    }
+    let user = {
+      name: "Dill"
+    };
+    let admin = {
+      name: "Smile"
+    };
 
-    let user2 = {
-      name: "Smile",
-      sizes: {
-        height: 5.4,
-        weight: 120
-      }
-    }
+    function sayHi() {
+      alert(this.name);
+    };
 
-    let clone = Object.assign({}, user);
 
-    console.log(user === clone) // false
-    console.log(user.sizes === clone.sizes) // true
+    user.f = sayHi;
+    admin.f = sayHi;
 
-    let clone2 = Object.assign({}, [user, user2])
-    console.log(clone2) 
-    /* {
-          0: {
-            name: "Dill",
-            sizes: { ... }
-          },
-          1: {
-            name: "Smile",
-            sizes: { ... }
-          }
-        }*/
+    user.f(); // Dill (this == user)
+    admin.f(); // Smile (this == admin)
     ```
-  </details>
+</details>
