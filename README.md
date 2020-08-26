@@ -408,8 +408,56 @@
       return maxSum;
     }
    ```
-        
   </details> 
+  <details>
+  <summary><b>Transform dash-separated to camel-cased:</b> background-color --> backgroundColor</summary>
+  
+  - Test
+  
+  ```javascript
+  var Mocha = require('mocha')
+  var assert = require('assert')
+  var mocha = new Mocha()
+
+  // Bit of a hack, sorry!
+  mocha.suite.emit('pre-require', this, 'solution', mocha)
+
+  describe('Test transforming dash-separated to camel-cased', function() {
+
+    it('should return backgroundColor for background-color', function() {
+      assert.equal(camelize('background-color'), "backgroundColor");
+    });
+
+    it('should return listStyleImage for list-style-image', function() {
+      assert.equal(camelize('list-style-image'), "listStyleImage");
+    });
+
+  });
+
+  mocha.run()
+  ```
+  
+  ```javascript
+   Test transforming dash-separated to camel-cased
+    ✓ should return backgroundColor for background-color
+    ✓ should return listStyleImage for list-style-image
+
+
+  2 passing (8ms)
+  ```
+  
+  - Solution
+  
+  ```javascript
+   function camelize(str) {
+      return str
+        .split("-")
+        .map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1))
+        .join('');
+    }
+  ```
+  
+  </details>
  </details> 
 
   
