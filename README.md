@@ -409,6 +409,7 @@
     }
    ```
   </details> 
+  
   <details>
   <summary><b>Transform dash-separated to camel-cased:</b> background-color --> backgroundColor</summary>
   
@@ -456,8 +457,59 @@
         .join('');
     }
   ```
+ 
+ </details>
+ 
+  <details>
+  <summary><b>Filter Range</b></summary>
   
-  </details>
+  - Solution
+  
+  ```javascript
+  let arr = [5, 3, 8, 1];
+
+  function filterRange(arr, a, b) {
+    return arr
+      .filter(item => (item >= a && item <= b));
+  }
+
+  let filtered = filterRange(arr, 1, 4);
+
+  alert(filtered); // 3, 1
+  alert(arr); // 5, 3, 8, 1
+  ```
+  
+  - `In-Place` Solution
+  
+  ```javascript
+   function filterRangeInPlace(arr, a, b) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] < a || arr[i] > b) {
+        arr.splice(i, 1);
+        i--;
+      }
+    }
+  };
+
+
+  let arr1 = [5, 3, 8, 1];
+  filterRangeInPlace(arr1, 1, 4);
+
+  alert(arr1); // [3, 1]
+  ```
+  
+ </details>
+ 
+ 
+ 
+  <summary><b></b></summary>
+ </details>
+  <summary><b></b></</summary>
+ </details>
+  <summary><b></b></summary>
+ </details>
+ 
+
  </details> 
 
   
