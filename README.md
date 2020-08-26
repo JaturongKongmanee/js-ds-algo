@@ -328,3 +328,51 @@
   // array = [1, 2, 3, 4]
   // concatArray = [1, 2, 3, 4, 5, 6, 7, 8]
   ```
+  
+  ## Object
+  <details>
+    <summary><b>Fundamental operators</b></summary>
+  
+    - `obj.property` - dot notation
+    - `obj["property"]` - square brackets notation
+    - `obj[varWithKey]` - take the key from a variable
+    - `delete obj.property` - to delete a property
+    - `"key" in obj` - to check if a property with the given key exists
+    - `for (let key in obj)` - to iterate over an object
+    - `Object.assign()` - to make a real copy (clone)
+    ```javascript
+      let user = {
+      name: "Dill",
+      sizes: {
+        height: 5.7,
+        weight: 120
+      }
+    }
+
+    let user2 = {
+      name: "Smile",
+      sizes: {
+        height: 5.4,
+        weight: 120
+      }
+    }
+
+    let clone = Object.assign({}, user);
+
+    console.log(user === clone) // false
+    console.log(user.sizes === clone.sizes) // true
+
+    let clone2 = Object.assign({}, [user, user2])
+    console.log(clone2) 
+    /* {
+          0: {
+            name: "Dill",
+            sizes: { ... }
+          },
+          1: {
+            name: "Smile",
+            sizes: { ... }
+          }
+        }*/
+    ```
+  </details>
