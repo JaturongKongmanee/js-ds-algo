@@ -163,7 +163,7 @@
   
  ---
 
-## Array
+## Array: is a `object`
 <details>
   <summary><b>Sort and Reverse</b></summary>
   
@@ -337,6 +337,82 @@
     ```
   </details> 
   
+ <details>
+  <summary><b>Exercises</b></summary>
+    <details>
+      <summary><b>Maximum subarray</b></summary>
+      
+   - Test  
+  ```javascript
+  var Mocha = require('mocha')
+  var assert = require('assert')
+  var mocha = new Mocha()
+
+  // Bit of a hack, sorry!
+  mocha.suite.emit('pre-require', this, 'solution', mocha)
+
+  describe('Test Max Subarray Sum', function() {
+    it('should return 5 for [-1, 2, 3, -9]', function() {
+      assert.equal(getMaxSubSum([-1, 2, 3, -9]), 5);
+    });
+
+    it('should return 11 for [-1, 2, 3, -9, 11]', function() {
+      assert.equal(getMaxSubSum([-1, 2, 3, -9, 11]), 11);
+    });
+
+    it('should return 3 for [-2, -1, 1, 2]', function() {
+      assert.equal(getMaxSubSum([-2, -1, 1, 2]), 3);
+    });
+
+    it('should return 100 for [100, -9, 2, -3, 5]', function() {
+      assert.equal(getMaxSubSum([100, -9, 2, -3, 5]), 100);
+    });
+
+    it('should return 6 for [1, 2, 3]', function() {
+      assert.equal(getMaxSubSum([1, 2, 3]), 6);
+    });
+
+    it('should return 0 for [-1, -2, -3]', function() {
+      assert.equal(getMaxSubSum([-1, -2, -3]), 0);
+    });
+  })
+
+  mocha.run()
+  ```
+
+  ```javascript
+  Test Max Subarray Sum
+  ✓ should return 5 for [-1, 2, 3, -9]
+  ✓ should return 11 for [-1, 2, 3, -9, 11]
+  ✓ should return 3 for [-2, -1, 1, 2]
+  ✓ should return 100 for [100, -9, 2, -3, 5]
+  ✓ should return 6 for [1, 2, 3]
+  ✓ should return 0 for [-1, -2, -3]
+
+
+  6 passing (12ms)
+  ```
+   
+   - Solution
+   ```javascript
+   function getMaxSubSum(arr) {
+        let maxSum = 0
+        let partialSum = 0
+
+        for (let item of arr) {
+          partialSum += item;
+          maxSum = Math.max(maxSum, partialSum);
+          if (partialSum < 0) partialSum = 0;
+        }
+
+      return maxSum;
+    }
+   ```
+        
+  </details> 
+ </details> 
+
+  
   ---
   
   ## Object
@@ -494,3 +570,7 @@
   }
   ```
 </details>
+
+---
+
+## String: `immutable`
