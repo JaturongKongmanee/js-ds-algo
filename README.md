@@ -163,8 +163,12 @@
   
  ---
 
-## Sorting an array
+## Array
+<details>
+  <summary><b>Sort and Reverse</b></summary>
+  
   - `sort()` - sorts the elements of an array IN PLACE (mutate) and RETURN THE SORTED ARRAY.
+    
   ```javascript
   // sorts the elements of an array in place and returns the sorted array.
   let a = ['banana', 'cherry', 'apple'];
@@ -199,7 +203,7 @@
 
   console.log(d.sort(caseInsensitiveSort)); // [ 'ant', 'Bug', 'cat', 'Dog' ]
   ```
-  
+
   - `reverse()` - reverses the elements of an array IN PLACE (mutate) and RETURN THE SORTED ARRAY.
   ```javascript
   let m = [2, 5, 6];
@@ -211,9 +215,10 @@
   let z = ['ant', 'Bug', 'cat', 'Dog'];
   console.log(z.reverse(caseInsensitiveSort)); // [ 'Dog', 'cat', 'Bug', 'ant' ]
   ```
- 
-
-## Searching an array
+</details>
+<details>
+  <summary><b>Searching - O(n)</b></summary>
+  
   - `indexOf`
   - `lastIndexOf(`
   - `includes()`
@@ -228,106 +233,109 @@
   console.log(s.includes('Smith')); // false
   console.log(s.includes('Smile')); // true
   ```
+</details>
+<details>
+  <summary><b>Basic Array Fucntion</b></summary>
+  
+  - **Initiate an array:**
+    - `fill()`
+    ```javascript
+    let k = new Array(5);
+    console.log(k); // [ <5 empty items> ]
+    console.log(k.fill(0)); // [ 0, 0, 0, 0, 0 ]
+    console.log(k.fill(7, 1, 3)); // [ 0, 7, 7, 0, 0 ]
+    ```
+  
+  - **Mutating an array:** 
+    - `push()`
+    ```javascript
+    // Insert an element at the end
+    const array = [1, 2, 3, 4]
+    array.push(10) // 5 (returns the length of the new array)
+    // array = [1, 2, 3, 4, 10]
+    ```
 
-## Basic Array Fucntion 
-- **Initiate an array:**
-  - `fill()`
-  ```javascript
-  let k = new Array(5);
-  console.log(k); // [ <5 empty items> ]
-  console.log(k.fill(0)); // [ 0, 0, 0, 0, 0 ]
-  console.log(k.fill(7, 1, 3)); // [ 0, 7, 7, 0, 0 ]
-  ```
+    - `pop()`
+    ```javascript
+    // Remove an element from the end
+    const array = [1, 2, 3 , 4]
+    array.pop() // 4 (pop returns the element removed)
+    // array = [1, 2, 3]
+    ```
 
-- **Mutating an array:** 
-  - `push()`
-  ```javascript
-  // Insert an element at the end
-  const array = [1, 2, 3, 4]
-  array.push(10) // 5 (returns the length of the new array)
-  // array = [1, 2, 3, 4, 10]
-  ```
-  
-  - `pop()`
-  ```javascript
-  // Remove an element from the end
-  const array = [1, 2, 3 , 4]
-  array.pop() // 4 (pop returns the element removed)
-  // array = [1, 2, 3]
-  ```
-  
-  - `unshift()`
-  ```javascript
-  // Inserts an element in the beginning
-  const array = [1, 2, 3, 4]
-  array.unshift(9, 10) // 6 returns the length of new array)
-  // array = [9, 10, 1, 2, 3, 4] 
-  ```
-  
-  - `shift()`
-  ```javascript
-  // Remove first element
-  const array = [1, 2, 3, 4]
-  array.shift() // 1(returns the removed element)
-  // array = [2, 3, 4]
-  ```
+    - `unshift()`
+    ```javascript
+    // Inserts an element in the beginning
+    const array = [1, 2, 3, 4]
+    array.unshift(9, 10) // 6 returns the length of new array)
+    // array = [9, 10, 1, 2, 3, 4] 
+    ```
 
-- **Iterating an array:**  NOT MUTATE the original array BUT RETURN A NEW ARRAY.
-  - `forEach()` -> params: {element, index, array}
-  ```javascript
-  // Iterates an array
-  const array = [1, 2, 3, 4]
-  array.forEach((elemnt, index) => {
-     console.log(`Element ${element} at index ${index}`)
-  }
-  ```
+    - `shift()`
+    ```javascript
+    // Remove first element
+    const array = [1, 2, 3, 4]
+    array.shift() // 1(returns the removed element)
+    // array = [2, 3, 4]
+    ```
+
+  - **Iterating an array:**  ***NOT MUTATE*** the original array ***BUT RETURN A NEW ARRAY***.
+    - `forEach()` -> params: {element, index, array}
+    ```javascript
+    // Iterates an array
+    const array = [1, 2, 3, 4]
+    array.forEach((elemnt, index) => {
+       console.log(`Element ${element} at index ${index}`)
+    }
+    ```
+
+    - `filter()`
+    ```javascript
+    // Iterates an array -> result is a filtered array
+    const array = [1, 2, 3, 4]
+    const filteredArray = array.filter(element => element % 2)
+    // array = [1, 2, 3, 4]
+    // filteredArray = [1, 3]
+    ```
+
+    - `map()`
+    ```javascript
+    // Iterates an array -> result is a filtered array
+    const array = [1, 2, 3, 4]
+    const mapArray = array.map(element => element * 2)
+    // array = [1, 2, 3, 4]
+    // mapArray = [2, 4, 6, 8]
+    ```
+
+    - `reduce()` -> params: {accumulator, currentElement, index, array}
+    ```javascript
+    // Reduces an array into a single value 
+    const array = [1, 2, 3, 4]
+    const result = array.reduce((accumulator, current) => (accumulator + current), 10)
+    // array = [1, 2, 3, 4]
+    // result = 20
+    ```
   
-  - `filter()`
-  ```javascript
-  // Iterates an array -> result is a filtered array
-  const array = [1, 2, 3, 4]
-  const filteredArray = array.filter(element => element % 2)
-  // array = [1, 2, 3, 4]
-  // filteredArray = [1, 3]
-  ```
   
-  - `map()`
-  ```javascript
-  // Iterates an array -> result is a filtered array
-  const array = [1, 2, 3, 4]
-  const mapArray = array.map(element => element * 2)
-  // array = [1, 2, 3, 4]
-  // mapArray = [2, 4, 6, 8]
-  ```
-  
-  - `reduce()` -> params: {accumulator, currentElement, index, array}
-  ```javascript
-  // Reduces an array into a single value 
-  const array = [1, 2, 3, 4]
-  const result = array.reduce((accumulator, current) => (accumulator + current), 10)
-  // array = [1, 2, 3, 4]
-  // result = 20
-  ```
-  
-  
-- **Manipulating an array:**  NOT MUTAUE the original array BUT RETURN A NEW ARRAY.
-  - `slice()` -> params: {startIndex, endIndex}
-  ```javascript
-  // Returns desired elements in a new array
-  const array = [1, 2, 3, 4]
-  const slicedArray = array.slice(0, 2)
-  // array = [1, 2, 3, 4]
-  // slicedArray = [1, 2]
-  ```
-  
-  - `concat()`
-  ```javascript
-  // Append one or more arrays with given array
-  const array = [1, 2, 3, 4]
-  const concatArray = array.concat([5, 6, 7, 8])
-  // array = [1, 2, 3, 4]
-  // concatArray = [1, 2, 3, 4, 5, 6, 7, 8]
-  ```
+  - **Manipulating an array:**  ***NOT MUTAE*** the original array ***BUT RETURN A NEW ARRAY***.
+    - `slice()` -> params: {startIndex, endIndex}
+    ```javascript
+    // Returns desired elements in a new array
+    const array = [1, 2, 3, 4]
+    const slicedArray = array.slice(0, 2)
+    // array = [1, 2, 3, 4]
+    // slicedArray = [1, 2]
+    ```
+
+    - `concat()`
+    ```javascript
+    // Append one or more arrays with given array
+    const array = [1, 2, 3, 4]
+    const concatArray = array.concat([5, 6, 7, 8])
+    // array = [1, 2, 3, 4]
+    // concatArray = [1, 2, 3, 4, 5, 6, 7, 8]
+    ```
+  </details> 
   
   ## Object
   <details>
