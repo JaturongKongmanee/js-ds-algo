@@ -731,5 +731,41 @@
   ```
  </details>
  
+  <details>
+  <summary><b>Get average age computed from Obj</b></summary>
+  
+  ```javascript
+  let john = { name: "John", age: 25 };
+  let pete = { name: "Pete", age: 30 };
+  let mary = { name: "Mary", age: 29 };
+
+  let arr = [ john, pete, mary ];
+
+  function getAverageAge(users) {
+    return arr.reduce((acc, user) => acc + user.age, 0) / users.length;
+  }
+
+
+  alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+  ```
+ </details>
+ 
+  <details>
+  <summary><b>Sort users byage</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users byage</b></summary>
+ </details>
+ 
+ 
+  <details>
+  <summary><b>Sort users byage</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users byage</b></summary>
+ </details>
+ 
 
  </details> 
