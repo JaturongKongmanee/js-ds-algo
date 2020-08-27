@@ -924,7 +924,35 @@
  </details>
  
  <details>
-  <summary><b>Sort users by age</b></summary>
+  <summary><b>Max Character: </b> #object</summary>
+  
+  ```javascript
+  function max(str) {
+    let charFreqCount = {};
+
+    for (let char of str) {
+      if (!charFreqCount[char]) {
+        charFreqCount[char] = 0;
+      }
+      charFreqCount[char] += 1;
+    }
+
+    let max = 0;
+    let maxChar = null;
+    for (let key in charFreqCount) {
+      if (charFreqCount[key] > max) {
+        max = charFreqCount[key];
+        maxChar = key;
+      }
+    }
+
+    return maxChar;
+
+  }
+
+
+  alert(max("Hello World!")); // l
+  ```
  </details>
  
   <details>
