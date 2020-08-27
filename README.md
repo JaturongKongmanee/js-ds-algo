@@ -786,7 +786,22 @@
  
  
   <details>
-  <summary><b>Sort users byage</b></summary>
+  <summary><b>Count # of Object Properties</b></summary>
+  
+  ```javascript
+  let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+  };
+
+
+  function count(obj) {
+    return Object.keys(obj).length;
+  }
+
+  alert(count(salaries)); // 3
+  ```
  </details>
  
   <details>
