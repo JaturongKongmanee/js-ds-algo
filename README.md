@@ -684,9 +684,9 @@
   alert(arr); // HTML,JavaScript,CSS
   ```
  </details>
- 
+  
   <details>
-  <summary><b>Map to Objects</b></</summary>
+  <summary><b>Map to Objects</b></summary>
   
   ```javascript
   let john = { name: "John", surname: "Smith", id: 1 };
@@ -708,9 +708,27 @@
   alert(usersMapped[0].id); // 1
   ```
  </details>
-  
+ 
   <details>
-  <summary><b>TBA</b></summary>
+  <summary><b>Sort users byage</b></summary>
+  
+  ```javascript
+  let john = { name: "John", age: 25 };
+  let pete = { name: "Pete", age: 30 };
+  let mary = { name: "Mary", age: 28 };
+
+  let arr = [ pete, john, mary ];
+
+  function sortByAge(arr) {
+    return arr.sort((a, b) => a.age > b.age ? 1 : -1);
+  }
+
+  sortByAge(arr);
+  // now: [john, mary, pete]
+  alert(arr[0].name); // John
+  alert(arr[1].name); // Mary
+  alert(arr[2].name); // Pete
+  ```
  </details>
  
 
