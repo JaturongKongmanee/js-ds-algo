@@ -898,7 +898,29 @@
  <summary><b>Algorithms</b></summary>
   
   <details>
-  <summary><b>Sort users by age</b></summary>
+  <summary><b>Binary Search: </b> #recursion</summary>
+  
+  ```javascript
+  function binarySearch(arr, value) {
+    let midIdx = Math.floor(arr.length / 2);
+    let midValue = arr[midIdx];
+
+    if (value === midValue) return true;
+
+    if (arr.length > 1 && value < midValue) {
+      return binarySearch(arr.splice(0, midIdx), value);
+    } else if (arr.length > 1 && value > midValue) {
+      return binarySearch(arr.splice(midIdx + 1, arr.length), value);
+    } else {
+      return false;
+    }
+  }
+
+
+  alert(binarySearch([1, 2, 3, 4, 5, 6], 4)); // true
+  alert(binarySearch([1, 2, 3, 4, 5, 6], 6)); // true
+  alert(binarySearch([1, 2, 3, 4, 5], 0)); // false
+  ```
  </details>
  
  <details>
