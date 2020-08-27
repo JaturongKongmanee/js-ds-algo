@@ -1005,6 +1005,38 @@
  </details>
  
   <details>
+  <summary><b>Count Vowels in string: </b> #Set</summary>
+  
+  ```javascript
+  const countVowels = (str) => {
+    let vowelsSet = new Set("aeiou");
+
+    let count = 0;
+    for (let chr of str) {
+      if (vowelsSet.has(chr)) count += 1;
+    }
+    return count;
+  }
+
+  alert(countVowels("hello world")); // 3
+  alert(countVowels("aeiou")); // 5
+  ```
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+ 
+  <details>
   <summary><b>Sort users by age</b></summary>
  </details>
  
