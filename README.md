@@ -1024,11 +1024,48 @@
  </details>
  
   <details>
-  <summary><b>Sort users by age</b></summary>
+  <summary><b>Array Chunking: </b> #array</summary>
+  
+  ```javascript
+  const chunk = (arr, size) => {
+    if (size >= arr.length) return [arr];
+
+    let chunks = [];
+    for (let i = 0; i < arr.length; i += size) {
+      chunks.push(arr.slice(i, i + size));
+    }
+
+    return chunks;
+  }
+
+  console.log(chunk([1, 2, 3, 4], 2)); // [[1, 2], [3, 4]]
+  console.log(chunk([1, 2, 3, 4], 3)); // [[1, 2, 3], [4]]
+  console.log(chunk([1, 2, 3, 4], 5)); // [[1, 2, 3, 4]]
+  ```
  </details>
  
   <details>
-  <summary><b>Sort users by age</b></summary>
+  <summary><b>Reverse Array In-Place: </b></summary>
+  
+  ```javascript
+  const reverseArray = (arr) => {
+    let start = 0;
+    let end = arr.length - 1;
+
+    while (start < end) {
+      [arr[start], arr[end]] = [arr[end], arr[start]];
+      start++;
+      end--;
+    }
+  }
+
+  let arr1 = [1, 2, 3, 4];
+  let arr2 = [4, 3, 2, 1];
+  reverseArray(arr1);
+  reverseArray(arr2);
+  console.log(arr1); // [4, 3, 2, 1]
+  console.log(arr2); // [1, 2, 3, 4]
+  ```
  </details>
  
   <details>
