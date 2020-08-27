@@ -751,7 +751,18 @@
  </details>
  
   <details>
-  <summary><b>Sort users byage</b></summary>
+  <summary><b>Filter unique array members</b></summary>
+  
+  ```javascript
+  function unique(arr) {
+    return Array.from(new Set(arr));
+  }
+  let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+  ];
+
+  alert( unique(strings) ); // Hare, Krishna, :-O
+  ```
  </details>
  
   <details>
