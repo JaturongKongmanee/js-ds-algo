@@ -505,7 +505,7 @@
 ## Exercises
 
 <details>
-  <summary><b>Exercises</b></summary>
+  <summary><b>Exercises: Fundamental</b></summary>
     <details>
       <summary><b>Maximum subarray: </b> #array, </summary>
       
@@ -891,4 +891,33 @@
  </details>
  
 
+ </details> 
+ 
+ 
+ <details>
+ <summary><b>Algorithms</b></summary>
+  
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+ <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+ 
+ 
+ 
  </details> 
