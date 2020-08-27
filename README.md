@@ -336,8 +336,175 @@
     // concatArray = [1, 2, 3, 4, 5, 6, 7, 8]
     ```
   </details> 
+
   
+  ---
+  
+  ## Object
  <details>
+   <summary><b>Fundamental operators</b></summary>
+  
+  - `obj.property` - dot notation
+  - `obj["property"]` - square brackets notation
+  - `obj[varWithKey]` - take the key from a variable
+  - `delete obj.property` - to delete a property
+  - `"key" in obj` - to check if a property with the given key exists
+  - `for (let key in obj)` - to iterate over an object
+  - `Object.assign()` - to make a real copy (clone)
+  ```javascript
+    let user = {
+    name: "Dill",
+    sizes: {
+      height: 5.7,
+      weight: 120
+    }
+  }
+
+  let user2 = {
+    name: "Smile",
+    sizes: {
+      height: 5.4,
+      weight: 120
+    }
+  }
+
+  let clone = Object.assign({}, user);
+
+  console.log(user === clone) // false
+  console.log(user.sizes === clone.sizes) // true
+
+  let clone2 = Object.assign({}, [user, user2])
+  console.log(clone2) 
+  /* {
+        0: {
+          name: "Dill",
+          sizes: { ... }
+        },
+        1: {
+          name: "Smile",
+          sizes: { ... }
+        }
+      }*/
+  ```
+</details>
+ <details>
+   <summary><b>Object methods, and "this" in methods</b></summary>
+  
+  - **Object Methods** - `method shorthand`
+  ```javascript
+  let user = {
+    name: "Dill",
+    sayHi() {
+      alert(this.name);
+    }
+  };
+
+  user.sayHi(); // Dill
+  ```
+  
+  ```javascript
+  let user = {
+    name: "Dill",
+  };
+  
+  function sayHi() {
+    alert(this.name);
+  }
+
+  user.sayHi = sayHi;
+  user.sayHi(); // Dill
+  ```
+  
+  - **"this" keyword in methods** - to access the object's property
+    - `this` **is not bound** - `this` is evaluated during the **run-time**, depending on the context.
+    - if `obj.f()` is called, then `this` is `obj` during the call of `f`. So it's either `user` or `admin` in the below example.
+    ```javascript
+    let user = {
+      name: "Dill"
+    };
+    let admin = {
+      name: "Smile"
+    };
+
+    function sayHi() {
+      alert(this.name);
+    };
+
+
+    user.f = sayHi;
+    admin.f = sayHi;
+
+    user.f(); // Dill (this == user)
+    admin.f(); // Smile (this == admin)
+    ```
+</details>
+
+</details>
+ <details>
+   <summary><b>Method Chaining</b></summary>
+  
+  - `ladder` object that allows to go up and down.
+  ```javascript
+  let ladder = {
+    step: 0,
+    up() {
+      this.step++;
+    },
+    down() {
+      this.step++;
+    },
+    showStep() {
+      alert(this.step);
+    }
+  }
+  ```
+  
+  - Making several calls in sequence.
+  ```javascript
+  ladder.up();
+  ladder.up();
+  ladder.down();
+  ladder.showStep(); // 1
+  ```
+  
+  - **Question** - if we want to make calls like this 
+  ```javascript
+  ladder
+    .up()
+    .up()
+    .down()
+    .showStep();
+  ```
+  
+  - **Answer** - return the `object` itself from every call 
+  ```javascript
+  let ladder = {
+    step: 0,
+    up() {
+      this.step++;
+      return this;
+    },
+    down() {
+      this.step--;
+      return this;
+    },
+    showStep() {
+      alert(this.step);
+      return this;
+    }
+  }
+  ```
+</details>
+
+---
+
+## String: `immutable`
+
+---
+
+## Exercises
+
+<details>
   <summary><b>Exercises</b></summary>
     <details>
       <summary><b>Maximum subarray</b></summary>
@@ -528,166 +695,3 @@
  
 
  </details> 
-
-  
-  ---
-  
-  ## Object
- <details>
-   <summary><b>Fundamental operators</b></summary>
-  
-  - `obj.property` - dot notation
-  - `obj["property"]` - square brackets notation
-  - `obj[varWithKey]` - take the key from a variable
-  - `delete obj.property` - to delete a property
-  - `"key" in obj` - to check if a property with the given key exists
-  - `for (let key in obj)` - to iterate over an object
-  - `Object.assign()` - to make a real copy (clone)
-  ```javascript
-    let user = {
-    name: "Dill",
-    sizes: {
-      height: 5.7,
-      weight: 120
-    }
-  }
-
-  let user2 = {
-    name: "Smile",
-    sizes: {
-      height: 5.4,
-      weight: 120
-    }
-  }
-
-  let clone = Object.assign({}, user);
-
-  console.log(user === clone) // false
-  console.log(user.sizes === clone.sizes) // true
-
-  let clone2 = Object.assign({}, [user, user2])
-  console.log(clone2) 
-  /* {
-        0: {
-          name: "Dill",
-          sizes: { ... }
-        },
-        1: {
-          name: "Smile",
-          sizes: { ... }
-        }
-      }*/
-  ```
-</details>
- <details>
-   <summary><b>Object methods, and "this" in methods</b></summary>
-  
-  - **Object Methods** - `method shorthand`
-  ```javascript
-  let user = {
-    name: "Dill",
-    sayHi() {
-      alert(this.name);
-    }
-  };
-
-  user.sayHi(); // Dill
-  ```
-  
-  ```javascript
-  let user = {
-    name: "Dill",
-  };
-  
-  function sayHi() {
-    alert(this.name);
-  }
-
-  user.sayHi = sayHi;
-  user.sayHi(); // Dill
-  ```
-  
-  - **"this" keyword in methods** - to access the object's property
-    - `this` **is not bound** - `this` is evaluated during the **run-time**, depending on the context.
-    - if `obj.f()` is called, then `this` is `obj` during the call of `f`. So it's either `user` or `admin` in the below example.
-    ```javascript
-    let user = {
-      name: "Dill"
-    };
-    let admin = {
-      name: "Smile"
-    };
-
-    function sayHi() {
-      alert(this.name);
-    };
-
-
-    user.f = sayHi;
-    admin.f = sayHi;
-
-    user.f(); // Dill (this == user)
-    admin.f(); // Smile (this == admin)
-    ```
-</details>
-
-</details>
- <details>
-   <summary><b>Method Chaining</b></summary>
-  
-  - `ladder` object that allows to go up and down.
-  ```javascript
-  let ladder = {
-    step: 0,
-    up() {
-      this.step++;
-    },
-    down() {
-      this.step++;
-    },
-    showStep() {
-      alert(this.step);
-    }
-  }
-  ```
-  
-  - Making several calls in sequence.
-  ```javascript
-  ladder.up();
-  ladder.up();
-  ladder.down();
-  ladder.showStep(); // 1
-  ```
-  
-  - **Question** - if we want to make calls like this 
-  ```javascript
-  ladder
-    .up()
-    .up()
-    .down()
-    .showStep();
-  ```
-  
-  - **Answer** - return the `object` itself from every call 
-  ```javascript
-  let ladder = {
-    step: 0,
-    up() {
-      this.step++;
-      return this;
-    },
-    down() {
-      this.step--;
-      return this;
-    },
-    showStep() {
-      alert(this.step);
-      return this;
-    }
-  }
-  ```
-</details>
-
----
-
-## String: `immutable`
