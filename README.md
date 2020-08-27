@@ -956,7 +956,52 @@
  </details>
  
   <details>
-  <summary><b>Sort users by age</b></summary>
+  <summary><b>Anagrams: </b> #object, #map, #sort, #2approaches</summary>
+  
+  ```javascript
+  // O(nlog n + m log m) - time complexity
+  // O(n + m) - space complexity  
+
+  const _sort = (str) => {
+    return str.replace(/\W/g, "").split("").sort().join("");
+  }
+
+  const anagrams1 = (str1, str2) => {
+    return _sort(str1) === _sort(str2);
+  }
+
+  alert(anagrams1("hello world", "world hello")); // true
+  alert(anagrams1("hellow world", "hello there")); // false
+
+  // -----------------------------------------------------------------
+  // O(n + m)  - time conplexity
+  // O(n + m) - space complexity
+  const charCount = (str) => {
+    let count = {};
+    for (let char of str) {
+      if (!count[char]) count[char] = 0;
+      count[char] += 1;
+    }
+    return count;
+  }
+
+  const anagrams2 = (str1, str2) => {
+    let str1Map = charCount(str1);
+    let str2Map = charCount(str2);
+
+    if (Object.keys(str1Map).length !== Object.keys(str2Map).length) return false;
+
+
+    for (let key in str1Map) {
+      if (str1Map[key] !== str2Map[key]) return false;
+    }
+
+    return true;
+  }
+
+  alert(anagrams2("hello world", "world hello")); // true
+  alert(anagrams2("hellow world", "hello there")); // false
+  ```
  </details>
  
   <details>
