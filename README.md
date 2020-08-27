@@ -507,7 +507,7 @@
 <details>
   <summary><b>Exercises</b></summary>
     <details>
-      <summary><b>Maximum subarray</b></summary>
+      <summary><b>Maximum subarray: </b> #array, </summary>
       
    - Test  
   ```javascript
@@ -578,7 +578,7 @@
   </details> 
   
   <details>
-  <summary><b>Transform dash-separated to camel-cased:</b> background-color --> backgroundColor</summary>
+  <summary><b>Transform dash-separated to camel-cased: </b> background-color --> backgroundColor #string, #array</summary>
   
   - Test
   
@@ -628,7 +628,7 @@
  </details>
  
   <details>
-  <summary><b>Filter Range</b></summary>
+  <summary><b>Filter Range: </b> #array</summary>
   
   - Solution
   
@@ -669,7 +669,7 @@
  
  
   <details>
-  <summary><b>Copy and Sort Array</b></summary>
+  <summary><b>Copy and Sort Array: </b> #array, #slice(), #sort()</summary>
   
   ```javascript
   let arr = ['HTML', 'JavaScript', 'CSS'];
@@ -686,7 +686,7 @@
  </details>
   
   <details>
-  <summary><b>Map to Objects</b></summary>
+  <summary><b>Map to Objects: </b> #array, #map(), #object</summary>
   
   ```javascript
   let john = { name: "John", surname: "Smith", id: 1 };
@@ -710,7 +710,7 @@
  </details>
  
   <details>
-  <summary><b>Sort Users by Age</b></summary>
+  <summary><b>Sort Users by Age: </b> #array, #sort(), #object</summary>
   
   ```javascript
   let john = { name: "John", age: 25 };
@@ -732,7 +732,7 @@
  </details>
  
   <details>
-  <summary><b>Get average age computed from Obj</b></summary>
+  <summary><b>Get average age computed from Obj: </b> #array, #reduce</summary>
   
   ```javascript
   let john = { name: "John", age: 25 };
@@ -751,7 +751,7 @@
  </details>
  
   <details>
-  <summary><b>Filter Unique Array Members</b></summary>
+  <summary><b>Filter Unique Array Members: </b> #Set, #Array.from()</summary>
   
   ```javascript
   function unique(arr) {
@@ -766,13 +766,13 @@
  </details>
  
   <details>
-  <summary><b>Sum the Object Property</b>: `Object.values(obj)`</summary>
+  <summary><b>Sum the Object Property</b>: #Object.values(obj), #array, #reduce()</summary>
   
   ```javascript
   let salaries = {
-  "John": 100,
-  "Pete": 300,
-  "Mary": 250
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
   };
 
 
@@ -786,7 +786,7 @@
  
  
   <details>
-  <summary><b>Count # of Object Properties</b></summary>
+  <summary><b>Count # of Object Properties: </b> #Object.keys(obj), #array</summary>
   
   ```javascript
   let salaries = {
@@ -805,7 +805,7 @@
  </details>
  
   <details>
-  <summary><b>Get Maximum Salary Person from Users Object</b></summary>
+  <summary><b>Get Maximum Salary Person from Users Object: </b> #Object.entries(obj)</summary>
   
   ```javascript
   let salaries = {
@@ -834,7 +834,7 @@
  </details>
  
   <details>
-  <summary><b>Filter Array through Function:</b>#closures, #array</summary>
+  <summary><b>Filter Array through Function:</b>#closures, #array, #arr.includes()</summary>
   
   ```javascript
   let arr = [1, 2, 3, 4, 5, 6, 7];
