@@ -710,7 +710,7 @@
  </details>
  
   <details>
-  <summary><b>Sort users byage</b></summary>
+  <summary><b>Sort Users by Age</b></summary>
   
   ```javascript
   let john = { name: "John", age: 25 };
@@ -751,7 +751,7 @@
  </details>
  
   <details>
-  <summary><b>Filter unique array members</b></summary>
+  <summary><b>Filter Unique Array Members</b></summary>
   
   ```javascript
   function unique(arr) {
@@ -766,7 +766,7 @@
  </details>
  
   <details>
-  <summary><b>Sum the object property</b>: `Object.values(obj)`</summary>
+  <summary><b>Sum the Object Property</b>: `Object.values(obj)`</summary>
   
   ```javascript
   let salaries = {
@@ -805,7 +805,52 @@
  </details>
  
   <details>
-  <summary><b>Sort users byage</b></summary>
+  <summary><b>Get Maximum Salary Person from Users Object</b></summary>
+  
+  ```javascript
+  let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+  };
+
+
+  function topSalary(salaries) {
+    let maxSalary = 0;
+    let highestPaidPerson = null;
+
+    for (let [key, value] of Object.entries(salaries)) {
+      if (value > maxSalary) {
+        maxSalary = value;
+        highestPaidPerson = key;
+      }
+    }
+
+    return highestPaidPerson;
+  }
+
+  alert(topSalary(salaries)); // Pete
+  ```
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
+ </details>
+ 
+  <details>
+  <summary><b>Sort users by age</b></summary>
  </details>
  
 
