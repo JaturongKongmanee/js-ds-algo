@@ -766,7 +766,22 @@
  </details>
  
   <details>
-  <summary><b>Sort users byage</b></summary>
+  <summary><b>Sum the object property</b>: `Object.values(obj)`</summary>
+  
+  ```javascript
+  let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+  };
+
+
+  function sumSalaries(salaries) {
+    return Object.values(salaries).reduce((acc, item) => acc + item, 0);
+  }
+
+  alert( sumSalaries(salaries) ); // 650
+  ```
  </details>
  
  
